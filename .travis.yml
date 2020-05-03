@@ -26,5 +26,5 @@ script:
  
 deploy:
   provider: heroku
-  api_key: "365f22fb-cbd6-4c0d-af38-3bdea8dc456e"
+  api_key: "8e49f8f6-dfa0-49bb-8f46-f22c501d0e74"
   app: laravel-heroku-travis
