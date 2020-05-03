@@ -23,3 +23,8 @@ before_script:
 
 script:
   - vendor/bin/phpunit
+ 
+deploy:
+  provider: heroku
+  api_key: "365f22fb-cbd6-4c0d-af38-3bdea8dc456e"
+  app: laravel-heroku-travis
