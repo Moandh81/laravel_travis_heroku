@@ -26,8 +26,6 @@ script:
  
 deploy:
   provider: heroku
-  edge:
-    branch: 1.9.7
   api_key:
     secure: "8e49f8f6-dfa0-49bb-8f46-f22c501d0e74"
   app: laravel-heroku-travis
