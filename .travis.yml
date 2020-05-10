@@ -1,11 +1,19 @@
 ## .travis.yml
 dist: precise
 
-language: php
+
 language: ruby
 
 rvm:
  - 2.6
+ 
+script : 
+  - gem install dpl
+ 
+
+
+language: php
+
 
 php:
   - 7.2
