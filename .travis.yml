@@ -44,3 +44,5 @@ deploy:
   on:
     repo: Moandh81/laravel_travis_heroku
   edge: true
+  skip_cleanup: true
+
