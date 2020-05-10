@@ -38,9 +38,9 @@ script:
  
 deploy:
   provider: heroku
-  edge: true
   api_key:
     secure: "8e49f8f6-dfa0-49bb-8f46-f22c501d0e74"
   app: laravel-heroku-travis
   on:
     repo: Moandh81/laravel_travis_heroku
+  edge: true
