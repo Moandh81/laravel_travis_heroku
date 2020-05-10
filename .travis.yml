@@ -2,6 +2,10 @@
 dist: precise
 
 language: php
+language: ruby
+
+rvm:
+ - 2.6
 
 php:
   - 7.2
