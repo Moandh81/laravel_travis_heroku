@@ -1,48 +1,29 @@
-## .travis.yml
 dist: precise
-
-
-language: ruby
-
-rvm:
- - 2.6
- 
-script : 
-  - gem install dpl
- 
-
-
 language: php
-
-
+rvm:
+- 2.6
+script:
+- vendor/bin/phpunit
 php:
-  - 7.2
-
+- 7.2
 addons:
   mariadb: 10.4
-
 cache:
   directories:
-    - node_modules
-    - vendor
-
+  - node_modules
+  - vendor
 before_script:
-  - cp .env.travis .env
-  - sudo mysql -e 'CREATE DATABASE testing;'
-  - composer self-update
-  - composer install --no-interaction
-  - php artisan migrate --no-interaction -vvv
-
-script:
-  - vendor/bin/phpunit
- 
+- cp .env.travis .env
+- sudo mysql -e 'CREATE DATABASE testing;'
+- composer self-update
+- composer install --no-interaction
+- php artisan migrate --no-interaction -vvv
 deploy:
   provider: heroku
   api_key:
-    secure: 8e49f8f6-dfa0-49bb-8f46-f22c501d0e74
+    secure: TPdLdWedrF06yWmQ+tIQwlI4O3Z3zpA8NqysV+1hphWsW0C8KYOZ9avxdLAhn7SjNisjDU0MBBC/DTkNViBD8fw986KP1mOZlcKomduF/+Gz9uV5uGWVv4++BvP+GGoML5Zwkz+USPS236xXExUNDwjBAdOnUWsf3+PyKFFmimFUUaLJF5CUX6uMFv1QcQqMgiezuIyVDdnnuFsHyQuX+O56ptCc91H8niNDw14Kpqg9GYl/BuMysIm+9G8a4+bZxROdX2GqNpt+6UqPMXZAeIO1ac6qYnk6oIOBi+NlkGP1SF7nKOx5UYzno9gFup1QZv4FfxkN2RPvAwH2bWycRhihqYiodmQoqnwB7jkD7KglemXtIk59iy3CVzTjr/cnG8jiVMeEmCQ1cYIGLxUgJ6HYgv3DJ6HQe5Q3gFe9zH8ZhXN9jPeSr53Uhc8LRkVY3O/tHOBXBbIDAlAsjGXzGCKuUSgjvOE5QFT1EfSLlHQUU9BZbMPeDAXI2kydCnNTYhNsXZsDCQ+jpfwlR3JNVmT5NZolTOGQGh4S9U3yvAPoI+h6qcmrnDvitgWCGYdJbx2+GRpVXQKHQ8rwWL5QLcJj6G/TyfW02bvaJe9GW8cOAfTEBJWRk1ZG+Ufoa2VHwHBou8fSbXF67kH3ggstviAW1ir54wqQ3ZNpW1hAeBM=
   app: laravel-heroku-travis
   on:
     repo: Moandh81/laravel_travis_heroku
   edge: true
   skip_cleanup: true
-
