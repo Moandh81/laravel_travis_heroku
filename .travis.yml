@@ -39,7 +39,7 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: "7364a168-74cc-4dfe-b3ee-ab1c9729555c"
+    secure: 7364a168-74cc-4dfe-b3ee-ab1c9729555c
   app: laravel-heroku-travis
   on:
     repo: Moandh81/laravel_travis_heroku
